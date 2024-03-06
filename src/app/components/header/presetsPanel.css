@@ -1,0 +1,47 @@
+.presets-panel {
+  z-index: 10;
+  background-color: rgba(175, 175, 175, 0.75);
+  backdrop-filter: blur(2px);
+  position: absolute;
+  margin-left: 25vw;
+}
+.presetsContainer {
+  min-height: 65px;
+  margin: 15px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 250px;
+}
+
+.presetsContainer .preset {
+  width: 100px;
+  height: 20px;
+  margin-bottom: 5px;
+}
+.presetsContainer .working {
+  width: 100px;
+  height: 20px;
+  margin-bottom: 5px;
+  background-color: rgb(190, 190, 190);
+  color: white;
+} 
+.presetsContainer .preset:hover,
+.presetsContainer .working:hover {
+  cursor: pointer;
+}
+
+.preset-action-buttons button {
+  margin-top: 25px;
+  margin-left: 15px;
+  padding: 5px 10px 5px 10px;
+  font-size: larger;
+}
+.preset-action-buttons button:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  .presetsContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

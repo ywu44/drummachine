@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: VT323;
+  src: url("C:\Users\Yizhuo Wu\Documents\fonts\VT323-Regular.ttf");
+}
+* {
+  font-family: VT323, sans-serif !important;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background-image: linear-gradient(
+    to bottom,
+    #d5d5d5,
+    #d5d5d5,
+    #e3e3e3,
+    #f1f1f1,
+    #ffffff
+  );
+  /* font-family: Roboto, "Helvetica Neue", sans-serif; */
+}
+/* width height */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 7.5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

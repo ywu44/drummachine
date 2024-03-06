@@ -1,0 +1,77 @@
+@import "canvas.css";
+.sound-item {
+  position: relative;
+  border: 1px solid black;
+  padding: 15px;
+  transition: 200ms;
+  background-color: rgb(230, 230, 230);
+  max-height: 250px;
+}
+.sound-item:hover {
+  background-color: rgb(190, 190, 190);
+}
+.mutedItem {
+  background-color: rgb(150, 150, 150) !important;
+}
+.sound-item p {
+  display: flex;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  justify-content: space-between;
+}
+.sound-item p input {
+  max-width: 45px;
+  height: 12px;
+  text-align: center;
+  padding-bottom: 3px;
+}
+.sound-item p input[id="itemKey"] {
+  max-width: 20px;
+}
+span[id^="itemTitle"] {
+  font-size: small;
+}
+#itemPan {
+  margin-left: 20px;
+}
+#itemPitch {
+  margin-left: 7px;
+}
+#itemFilter {
+  width: 32px !important;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.itemTitle-volume-number,
+.itemTitle-pan-number,
+.itemTitle-swing-number {
+  width: 17px;
+}
+.itemTitle-pan-number:hover,
+.itemTitle-swing-number:hover {
+  cursor: pointer;
+}
+.item-info-pitch button {
+  padding: 2px;
+}
+.item-info-pitch button:hover {
+  cursor: pointer;
+}
+.itemContent {
+  font-size: large;
+}
+.actionButtons {
+  margin-top: 10px;
+  margin-bottom: -10px;
+  display: flex;
+  justify-content: end;
+}
+.actionButton {
+  margin-left: 10px;
+}
+.muteButton svg:hover,
+.deleteSoundButton svg:hover,
+.soloButton svg:hover {
+  cursor: pointer;
+}
+

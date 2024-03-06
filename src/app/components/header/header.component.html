@@ -1,0 +1,126 @@
+<div class="header-container">
+  <div class="header">
+    <div class="basic-input">
+      <label class="labelBPM" for="bpm">BPM:</label>
+      <input
+        class="inputBPM"
+        #bpmInput
+        type="number"
+        id="bpm"
+        name="bpm"
+        min="1"
+        max="999"
+        [value]="this.playerService.bpm"
+        [(ngModel)]="this.playerService.bpm"
+        (ngModelChange)="changeBPM(bpmInput.value)"
+      />
+    </div>
+    <div class="bars-input">
+      <span>Bars:</span>
+      <select
+        class="selectSections"
+        name="bars"
+        id="bars"
+        [ngModel]="this.playerService.length"
+        (ngModelChange)="changeLength($event)"
+        [disabled]="this.playerService.isPlaying"
+      >
+        <option
+          *ngFor="let i of [].constructor(4); let j = index"
+          value="{{ (j + 1) * 16 }}"
+        >
+          {{ (j + 1) * 4 }}
+        </option>
+      </select>
+    </div>
+    <ng-container
+      *ngIf="!this.uploadingFile && !this.mainMenu && this.presetPanel"
+    >
+      <div class="preset-action-buttons">
+        <button (click)="closePresets()">Cancel</button>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="!this.uploadingFile && this.mainMenu">
+      <div class="basic-actions">
+        <button
+          class="playButton"
+          *ngIf="!this.playerService.isPlaying"
+          (click)="this.playerService.play()"
+        >
+          Play
+        </button>
+        <button
+          class="stopButton"
+          *ngIf="this.playerService.isPlaying"
+          (click)="this.playerService.play()"
+        >
+          Stop
+        </button>
+        <button (click)="reset()">Reset</button>
+        <button id="uploadButton">
+          <label class="file-upload">
+            <input type="file" accept="audio/*" (change)="getFile($event)" />
+            Add Sound
+          </label>
+        </button>
+        <button id="presetButton" (click)="openPresets()">Presets</button>
+        <!-- <button (click)="clearSounds()">Clear</button> -->
+        <button disabled>Save</button>
+        <button disabled>Load</button>
+      </div></ng-container
+    >
+    <ng-container *ngIf="this.uploadingFile && !this.mainMenu">
+      <div class="uploading-panel">
+        <form [formGroup]="newSoundForm">
+          <div class="sampleNameInput">
+            <label for="fileName">Your sample name: </label>
+            <input
+              #filename
+              type="text"
+              name="fileName"
+              formControlName="fileName"
+            />
+            <p *ngIf="fileName!.touched && fileName!.invalid">not Valid</p>
+          </div>
+          <div class="sampleTriggerInput">
+            <label for="fileName">Your trigger: </label>
+            <input
+              #triggerKey
+              type="text"
+              name="trigger"
+              maxlength="1"
+              formControlName="trigger"
+            />
+            <p *ngIf="trigger!.touched && trigger!.invalid">not Valid</p>
+          </div>
+
+          <div class="uploadButton">
+            <button (click)="cancelUpload()">Cancel</button>
+            <button (click)="uploadSample()">
+              Upload
+            </button>
+            <div class="progressReport">
+              <p>{{ progress }}%</p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+<ng-container *ngIf="!this.uploadingFile && !this.mainMenu && this.presetPanel">
+  <div class="presets-panel">
+    <div class="presetsContainer">
+      <button class="working" (click)="loadWorking()">WORKING</button>
+      <button
+        class="preset"
+        *ngFor="let preset of this.soundService.getPresets() | keyvalue"
+        (click)="loadPreset(preset.key)"
+      >
+        {{ preset.key | uppercase }}
+      </button>
+    </div>
+  </div>
+</ng-container>

@@ -1,0 +1,12 @@
+.waveForm canvas {
+  width: 120px;
+  height: 30px;
+  background-color: white;
+}
+.waveForm canvas:hover {
+  cursor: pointer;
+}
+.startEnd {
+  display: flex;
+  justify-content: space-between;
+}

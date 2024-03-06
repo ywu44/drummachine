@@ -1,0 +1,128 @@
+@import "slider.css";
+@import "soundItem.css";
+.mixer-box {
+  position: fixed;
+  bottom: 0;
+  height: 32vh;
+  border-top: 1px solid grey;
+  box-shadow: 0px 0px 5px gray;
+}
+.mixer-container {
+  display: flex;
+  width: 70vw;
+  height: 35vh;
+  margin-left: 15vw;
+  margin-right: 15vw;
+  padding: 15px;
+}
+.leftBar {
+  width: 25%;
+  padding-left: 10px;
+  overflow-y: auto;
+}
+.labelBPM {
+  font-size: 25px;
+  margin-right: 5px;
+}
+.inputBPM {
+  height: 28px;
+  width: 56px;
+  font-size: 30px;
+  border: none;
+  transition: 150ms;
+}
+.inputBPM:hover {
+  background-color: rgb(225, 225, 225);
+}
+.length-input span {
+  margin-top: 15px;
+  margin-right: 5px;
+  font-size: 25px;
+}
+.length-input select {
+  width: 48px;
+  font-size: 30px;
+  border: none;
+  padding-left: 5px;
+  appearance: none;
+  transition: 150ms;
+}
+.length-input select:hover {
+  background-color: rgb(225, 225, 225);
+}
+.basic-actions {
+  margin-top: 70px;
+  margin-bottom: 25px;
+  display: grid;
+  grid-template-columns: repeat(2, 0fr);
+  gap: 5px;
+}
+.basic-actions button {
+  max-height: 35px;
+  max-width: 75px;
+  width: 9vw;
+  font-size: larger;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.basic-actions button:hover {
+  cursor: pointer;
+  background-color: grey;
+}
+#uploadButton {
+  padding: 0px;
+}
+#uploadButton label {
+  padding: 5px;
+}
+.basic-actions button label:hover {
+  cursor: pointer;
+}
+.stopButton {
+  background-color: rgb(100, 100, 100);
+  color: white;
+}
+input[type="file"] {
+  display: none;
+}
+.sounds-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-items: center;
+  gap: 10px;
+  height: 30vh;
+  width: 100%;
+  overflow-y: auto;
+}
+
+@media (max-width: 1600px) {
+  .sounds-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+@media (max-width: 1370px) {
+  .sounds-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 1150px) {
+  .sounds-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 920px) {
+  .sounds-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 690px) {
+  .sounds-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .labelBPM {
+    font-size: 20px;
+  }
+  .length-input span {
+    font-size: 20px;
+  }
+}

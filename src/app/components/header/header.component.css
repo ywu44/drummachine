@@ -1,0 +1,97 @@
+@import "uploadPanel.css";
+@import "presetsPanel.css";
+.header-container {
+  box-shadow: 0px 0px 5px black;
+  position: relative;
+  z-index: 99;
+  background-color: rgb(235, 235, 235);
+}
+.basic-input,
+.bars-input {
+  margin-top: 25px;
+}
+.header {
+  display: flex;
+  width: 80%;
+  margin: 0px auto;
+  padding-bottom: 10px;
+}
+.labelBPM {
+  font-size: 25px;
+  margin-right: 5px;
+}
+.inputBPM {
+  height: 28px;
+  width: 56px;
+  font-size: 30px;
+  border: none;
+  transition: 150ms;
+}
+.inputBPM:hover {
+  background-color: rgb(225, 225, 225);
+}
+.bars-input span {
+  margin-top: 15px;
+  margin-right: 5px;
+  margin-left: 10px;
+  font-size: 25px;
+}
+.bars-input select {
+  width: 48px;
+  font-size: 30px;
+  border: none;
+  padding-left: 5px;
+  appearance: none;
+  transition: 150ms;
+}
+.bars-input select:hover {
+  background-color: rgb(225, 225, 225);
+}
+.basic-actions {
+  /* display: grid;
+  grid-template-columns: repeat(2, 0fr); */
+  display: flex;
+  gap: 5px;
+  margin-top: 25px;
+  margin-left: 10px;
+}
+.basic-actions button {
+  max-height: 35px;
+  max-width: 75px;
+  width: 9vw;
+  font-size: larger;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.basic-actions button:hover {
+  cursor: pointer;
+  background-color: grey;
+}
+#uploadButton {
+  padding: 0px;
+}
+#uploadButton label {
+  padding: 5px;
+}
+.basic-actions button label:hover {
+  cursor: pointer;
+}
+.stopButton {
+  background-color: rgb(100, 100, 100);
+  color: white;
+}
+input[type="file"] {
+  display: none;
+}
+.sounds-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-items: center;
+  gap: 10px;
+  height: 35vh;
+  width: 100%;
+  overflow-y: auto;
+}
+.uploading-panel form {
+  display: flex;
+}
