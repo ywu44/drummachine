@@ -13,6 +13,7 @@ import { KeyPressDirective } from './directives/key-press.directive';
 import { MixerComponent } from './components/mixer/mixer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
+import { APP_BASE_HREF, HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,10 @@ import { HeaderComponent } from './components/header/header.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: APP_BASE_HREF, useValue: '/' },
+        { provide: LocationStrategy, useClass: HashLocationStrategy },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
